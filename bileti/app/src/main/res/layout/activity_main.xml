@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/origin"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/originCity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/whereto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/whereto"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/wheretoCity"
+        app:layout_constraintLeft_toRightOf="@+id/line_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <Spinner
+        android:id="@+id/originCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/originDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/line_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintWidth_default="spread" />
+
+    <Spinner
+        android:id="@+id/wheretoCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/wheretoDate"
+        app:layout_constraintLeft_toRightOf="@id/line_1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintWidth_default="spread" />
+
+    <EditText
+        android:id="@+id/originDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/departure_date"
+        app:layout_constraintBottom_toTopOf="@id/adults"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/line_1"
+        app:layout_constraintTop_toBottomOf="@+id/originCity"
+        app:layout_constraintWidth_default="wrap" />
+
+    <EditText
+        android:id="@+id/wheretoDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/arrival_date"
+        app:layout_constraintBottom_toTopOf="@+id/adults"
+        app:layout_constraintLeft_toRightOf="@id/line_1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wheretoCity"
+        app:layout_constraintWidth_default="wrap" />
+
+    <EditText
+        android:id="@+id/adults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="2"
+        android:hint="@string/adults"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btnSearch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/children"
+        app:layout_constraintTop_toBottomOf="@+id/wheretoDate" />
+
+    <EditText
+        android:id="@+id/children"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/children"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btnSearch"
+        app:layout_constraintLeft_toRightOf="@+id/adults"
+        app:layout_constraintRight_toLeftOf="@+id/infants"
+        app:layout_constraintTop_toBottomOf="@+id/wheretoDate" />
+
+    <EditText
+        android:id="@+id/infants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/infants"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btnSearch"
+        app:layout_constraintLeft_toRightOf="@+id/children"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheretoDate" />
+
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/line_1"
+        app:layout_constraintTop_toBottomOf="@+id/adults" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/line_1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adults" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

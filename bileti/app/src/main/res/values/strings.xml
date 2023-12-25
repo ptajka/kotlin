@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FlightSearch</string>
+
+    <string-array name="cities">
+        <item>Москва</item>
+        <item>Нью-Йорк</item>
+        <item>Иркутск</item>
+        <item>Лондон</item>
+    </string-array>
+
+    <string name="search">Поиск</string>
+    <string name="departure_date">Дата вылета</string>
+    <string name="arrival_date">Дата прилета</string>
+    <string name="adults">Взрослые</string>
+    <string name="children">Дети</string>
+    <string name="infants">Младенцы</string>
+    <string name="reset">Сброс</string>
+    <string name="origin">Origin</string>
+    <string name="whereto">Where to</string>
+</resources>
